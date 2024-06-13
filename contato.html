@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contatos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Contatos</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre a Clínica</a></li>
+                <li><a href="horario.html">Horário de Atendimento</a></li>
+                <li><a href="contato.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Entre em Contato</h2>
+            <div id="mensagem-sucesso" class="mensagem-sucesso" style="display: none;">Enviado com sucesso!</div>
+            <form class="form-contato" id="form-contato" onsubmit="enviarFormulario(event)">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        <section class="info-contato">
+            <h2>Informações de Contato</h2>
+            <p><strong>Endereço:</strong> Texas Children's Med Center (Level I), 6621 Fannin St, Houston, TX 77030, EUA</p>
+            <p><strong>Telefones:</strong></p>
+            <ul>
+                <li>(+1) 832-824-1000</li>
+            </ul>
+            <h2>Localização</h2>
+            <div class="mapa">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d347.72125445873316!2d-95.4016524!3d29.7078797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c0717c3c70d7%3A0x9425feff8aef7b08!2sTexas%20Children&#39;s%20Med%20Center%20(Level%20I)!5e0!3m2!1spt-BR!2sbr!4v1592658674593!5m2!1spt-BR!2sbr" 
+                    width="600" 
+                    height="450" 
+                    frameborder="0" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    aria-hidden="false" 
+                    tabindex="0">
+                </iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Infantil Texas Children's</p>
+    </footer>
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault();
+            const form = document.getElementById('form-contato');
+            const mensagemSucesso = document.getElementById('mensagem-sucesso');
+
+            // Simulação de envio
+            setTimeout(() => {
+                // Exibe a mensagem de sucesso
+                mensagemSucesso.style.display = 'block';
+                
+                // Redireciona de volta à página de contato após 2 segundos
+                setTimeout(() => {
+                    mensagemSucesso.style.display = 'none';
+                    form.reset();
+                }, 2000);
+            }, 500);
+        }
+    </script>
+</body>
+</html>
